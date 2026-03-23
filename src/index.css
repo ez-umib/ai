@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 160 30% 90%;
+    --card: 220 18% 10%;
+    --card-foreground: 160 30% 90%;
+    --primary: 160 100% 45%;
+    --primary-foreground: 220 20% 6%;
+    --border: 160 30% 18%;
+    /* shto të gjitha variablat e tjera si në screenshot */
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
