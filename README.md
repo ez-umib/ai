@@ -1,4 +1,4 @@
-# Welcome to your Lovabl AI project
+# Welcome  AI project
 # AI Agent — Interactive Portfolio & Showcase
 TODO: Document your project here
 An interactive, modern web application showcasing AI Agent architecture, tools, and capabilities. Built with a cyberpunk-inspired design featuring animated sections, terminal chat simulation, architecture diagrams, and code previews.
