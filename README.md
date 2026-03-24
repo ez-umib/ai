@@ -1,8 +1,8 @@
-# Welcome to your Lovable project
+# Welcome to your Lovabl AI project
 # AI Agent — Interactive Portfolio & Showcase
 TODO: Document your project here
 An interactive, modern web application showcasing AI Agent architecture, tools, and capabilities. Built with a cyberpunk-inspired design featuring animated sections, terminal chat simulation, architecture diagrams, and code previews.
-## 🚀 Features
+##  Features
 - **Hero Section** — Animated landing with scanline effects and grid background
 - **Architecture Diagram** — Visual representation of the AI agent system
 - **Tool Cards** — Interactive cards showcasing agent capabilities
@@ -10,7 +10,7 @@ An interactive, modern web application showcasing AI Agent architecture, tools, 
 - **Code Preview** — Live code snippet display
 - **Responsive Design** — Fully responsive across all devices
 - **Dark Theme** — Cyberpunk-inspired dark UI with neon green accents
-## 🛠️ Tech Stack
+##  Tech Stack
 - **React 18** + **TypeScript**
 - **Vite** — Fast build tool
 - **Tailwind CSS** — Utility-first styling
@@ -18,7 +18,7 @@ An interactive, modern web application showcasing AI Agent architecture, tools, 
 - **shadcn/ui** — UI component library
 - **React Router** — Client-side routing
 - **TanStack React Query** — Data fetching
-## 📦 Installation
+##  Installation
 ```bash
 # Clone the repository
 git clone <repository-url>
@@ -28,7 +28,7 @@ npm install
 # Start development server
 npm run dev
 ```
-## 📜 Available Scripts
+##  Available Scripts
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start development server |
@@ -36,7 +36,7 @@ npm run dev
 | `npm run preview` | Preview production build |
 | `npm run lint` | Run ESLint |
 | `npm test` | Run tests with Vitest |
-## 📁 Project Structure
+##  Project Structure
 ```
 src/
 ├── components/          # Reusable UI components
@@ -53,9 +53,9 @@ src/
 ├── lib/                 # Utility functions
 └── index.css            # Global styles & design tokens
 ```
-## 🎨 Design Principles
+##  Design Principles
 Built with **SOLID principles** — Strategy · Factory · Observer · ReAct patterns.
-## 📄 License
+##  License
 MIT
 
 
