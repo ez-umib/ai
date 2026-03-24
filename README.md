@@ -1,176 +1,61 @@
-# React + TypeScript + Vite + Tailwind + ShadCN/UI Project
-
-This is a modern starter project using **React**, **TypeScript**, **Vite**, **TailwindCSS**, and **ShadCN/UI components**. It includes routing, notifications, glow effects, animations, and a 404 page.
-
----
-
+# Welcome to your Lovable project
+# AI Agent — Interactive Portfolio & Showcase
+TODO: Document your project here
+An interactive, modern web application showcasing AI Agent architecture, tools, and capabilities. Built with a cyberpunk-inspired design featuring animated sections, terminal chat simulation, architecture diagrams, and code previews.
 ## 🚀 Features
-
-- React 18+ with `createRoot`
-- TypeScript for type safety
-- TailwindCSS for fast and modern styling
-- ShadCN/UI for ready-made UI components
-- React Router v6 for navigation
-- React Query for server state management
-- Notifications with **Sonner** and **Toaster**
-- Glowing text, glowing boxes, and retro scanlines
-- Fully set-up 404 page and catch-all routing
-- Vitest for testing
-
----
-
-## 🗂 Project Structure
-
-
-src/
-├─ App.tsx # Routing and providers (QueryClient, TooltipProvider, Toaster/Sonner)
-├─ main.tsx # React entry point
-├─ pages/
-│ ├─ Index.tsx # Home page
-│ └─ NotFound.tsx # 404 page
-├─ components/ # Reusable UI components
-└─ index.css # Tailwind + custom styles, animations, glow effects
-
-
----
-
-## ⚡ Getting Started
-
-1. Install dependencies:
-
+- **Hero Section** — Animated landing with scanline effects and grid background
+- **Architecture Diagram** — Visual representation of the AI agent system
+- **Tool Cards** — Interactive cards showcasing agent capabilities
+- **Terminal Chat** — Simulated terminal-style chat interface
+- **Code Preview** — Live code snippet display
+- **Responsive Design** — Fully responsive across all devices
+- **Dark Theme** — Cyberpunk-inspired dark UI with neon green accents
+## 🛠️ Tech Stack
+- **React 18** + **TypeScript**
+- **Vite** — Fast build tool
+- **Tailwind CSS** — Utility-first styling
+- **Framer Motion** — Smooth animations
+- **shadcn/ui** — UI component library
+- **React Router** — Client-side routing
+- **TanStack React Query** — Data fetching
+## 📦 Installation
 ```bash
+# Clone the repository
+git clone <repository-url>
+cd ai_agent
+# Install dependencies
 npm install
-# or
-yarn
-# or
-pnpm install
-Start the development server:
+# Start development server
 npm run dev
-Open your browser at http://localhost:5173
-🎨 Styling and Animations
-CSS variables for colors:
---background, --foreground, --primary, --secondary, --accent
-Glow effects:
-.text-glow, .text-glow-blue
-.box-glow, .box-glow-blue
-Retro scanlines with .scanline
-Animations:
-.logo-spin for rotation
-Hover drop-shadow effects
-🔧 Scripts
-{
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "test": "vitest run"
-}
-dev → start development server
-build → production build
-preview → preview production locally
-test → run Vitest
-📚 Code Examples
-App.tsx
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "sonner";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import "./index.css";
+```
+## 📜 Available Scripts
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+| `npm test` | Run tests with Vitest |
+## 📁 Project Structure
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/              # shadcn/ui base components
+│   ├── HeroSection.tsx
+│   ├── ArchitectureDiagram.tsx
+│   ├── ToolCards.tsx
+│   ├── TerminalChat.tsx
+│   └── CodePreview.tsx
+├── pages/               # Route pages
+│   ├── Index.tsx
+│   └── NotFound.tsx
+├── hooks/               # Custom React hooks
+├── lib/                 # Utility functions
+└── index.css            # Global styles & design tokens
+```
+## 🎨 Design Principles
+Built with **SOLID principles** — Strategy · Factory · Observer · ReAct patterns.
+## 📄 License
+MIT
 
-const queryClient = new QueryClient();
-
-function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
-      <Toaster />
-    </QueryClientProvider>
-  );
-}
-
-export default App;
-main.tsx
-import React from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App";
-
-const container = document.getElementById("root");
-const root = createRoot(container!);
-root.render(<App />);
-pages/Index.tsx
-export default function Index() {
-  return (
-    <div className="text-glow text-4xl flex items-center justify-center h-screen">
-      Welcome to the Project!
-    </div>
-  );
-}
-pages/NotFound.tsx
-export default function NotFound() {
-  return (
-    <div className="text-red-500 text-4xl flex items-center justify-center h-screen">
-      404 - Page Not Found
-    </div>
-  );
-}
-index.css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #0f0f0f;
-  --foreground: #ffffff;
-  --primary: #10b981;
-  --secondary: #3b82f6;
-}
-
-.text-glow {
-  text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
-}
-
-.text-glow-blue {
-  text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
-}
-
-.box-glow {
-  box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
-}
-
-.box-glow-blue {
-  box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
-}
-
-.scanline {
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(255,255,255,0.05),
-    rgba(255,255,255,0.05) 1px,
-    transparent 1px,
-    transparent 2px
-  );
-}
-
-.logo-spin {
-  transition: transform 0.5s;
-}
-.logo-spin:hover {
-  transform: rotate(360deg);
-}
-✅ Testing
-import { describe, it, expect } from "vitest";
-import { render } from "@testing-library/react";
-import Index from "../pages/Index";
-
-describe("Index page", () => {
-  it("renders welcome text", () => {
-    const { getByText } = render(<Index />);
-    expect(getByText("Welcome to the Project!")).toBeTruthy();
-  });
-});
 
