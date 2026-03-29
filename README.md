@@ -1,61 +1,68 @@
-# Welcome to AI project
-# AI Agent — Interactive Portfolio & Showcase
-TODO: Document your project here
-An interactive, modern web application showcasing AI Agent architecture, tools, and capabilities. Built with a cyberpunk-inspired design featuring animated sections, terminal chat simulation, architecture diagrams, and code previews.
-##  Features
-- **Hero Section** — Animated landing with scanline effects and grid background
-- **Architecture Diagram** — Visual representation of the AI agent system
-- **Tool Cards** — Interactive cards showcasing agent capabilities
-- **Terminal Chat** — Simulated terminal-style chat interface
-- **Code Preview** — Live code snippet display
-- **Responsive Design** — Fully responsive across all devices
-- **Dark Theme** — Cyberpunk-inspired dark UI with neon green accents
-##  Tech Stack
-- **React 18** + **TypeScript**
-- **Vite** — Fast build tool
-- **Tailwind CSS** — Utility-first styling
-- **Framer Motion** — Smooth animations
-- **shadcn/ui** — UI component library
-- **React Router** — Client-side routing
-- **TanStack React Query** — Data fetching
-##  Installation
+# AI Personal Assistant - Python CLI
+
+This project is an **AI Personal Assistant** implemented in Python using the **Google Gemini API**. It follows modern software engineering practices, leveraging **SOLID principles** and well-known design patterns to ensure modularity, maintainability, and extensibility.
+
+The agent maintains conversation history, decides autonomously when to invoke external tools (function calling), and responds adaptively to user requests.
+
+---
+
+## Project Structure
+
+
+ai_agent/
+└── agent/
+├── base_tool.py # Abstract base class defining the tool interface
+├── tool_registry.py # Manages registration and execution of tools
+├── memory_manager.py # Stores conversation history
+├── agent.py # Orchestrates the Reason → Act → Observe loop
+├── main.py # CLI for user interaction
+└── tools/
+├── calc_tool.py # Example calculator tool
+├── time_tool.py # Example tool for date and time
+├── custom_tool1.py # Custom tool example
+└── custom_tool2.py # Custom tool example
+
+
+---
+
+## Development Environment
+
+- **Python:** 3.10+  
+- Install required packages:
+
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd ai_agent
-# Install dependencies
-npm install
-# Start development server
-npm run dev
-```
-##  Available Scripts
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
-| `npm test` | Run tests with Vitest |
-##  Project Structure
-```
-src/
-├── components/          # Reusable UI components
-│   ├── ui/              # shadcn/ui base components
-│   ├── HeroSection.tsx
-│   ├── ArchitectureDiagram.tsx
-│   ├── ToolCards.tsx
-│   ├── TerminalChat.tsx
-│   └── CodePreview.tsx
-├── pages/               # Route pages
-│   ├── Index.tsx
-│   └── NotFound.tsx
-├── hooks/               # Custom React hooks
-├── lib/                 # Utility functions
-└── index.css            # Global styles & design tokens
-```
-##  Design Principles
-Built with **SOLID principles** — Strategy · Factory · Observer · ReAct patterns.
-##  License
-MIT
+pip install google-generativeai requests
+Create a Gemini API key via Google AI Studio and set it as an environment variable:
+export GOOGLE_GENAI_API_KEY="YOUR_API_KEY"
+How to Run
+Navigate to the agent directory:
+cd ai_agent/agent
+Run the Python CLI:
+python3.11 main.py
+Type exit to quit the application.
+ Architecture
+BaseTool: Defines the interface for all tools.
+ToolRegistry: Dynamically registers and executes tools by name.
+MemoryManager: Maintains conversation history within a session.
+Agent: Implements the ReAct loop:
+Reason – Decide whether to respond directly or call a tool.
+Act – Execute the chosen tool if needed.
+Observe – Store the tool output and continue the conversation.
+ Implemented Features
+Natural language CLI interface for user interaction
+Contextual conversation memory
+Execution of external tools:
+Calculator
+Time & Date
+Two custom tools (e.g., file reading, translation, news retrieval)
+Adaptive decision-making on when to use tools
+Robust error handling:
+API errors
+Invalid tool arguments
+Unknown tool requests
+ References
+Google Gemini API Documentation
+SOLID Principles in Python
+Gang of Four Design Patterns
 
 
