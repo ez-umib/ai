@@ -1,5 +1,5 @@
-import google.generativeai as genai
 import os
+import google.generativeai as genai
 
 class Agent:
     def __init__(self, memory, registry):
@@ -15,8 +15,7 @@ class Agent:
         self.memory.add("user", user_input)
 
         response = self.model.generate_content(
-            self.memory.get(),
-            safety_settings={"HARASSMENT":"BLOCK_NONE"}
+            self.memory.get()
         )
 
         if response.candidates[0].content.parts[0].function_call:
@@ -25,8 +24,6 @@ class Agent:
             args = fn.args
             output = self.registry.execute(tool_name, args)
             self.memory.add("tool", str(output))
-
-            # Continue reasoning
             final = self.model.generate_content(self.memory.get())
             return final.text
         

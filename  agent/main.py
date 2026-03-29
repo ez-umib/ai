@@ -1,31 +1,26 @@
+# main.py
 from agent import Agent
 from memory_manager import MemoryManager
 from tool_registry import ToolRegistry
+from tools.calculator_tool import CalculatorTool  # ose çdo tool që ke
 
-from tools.calculator_tool import CalculatorTool
-from tools.weather_tool import WeatherTool
-from tools.translate_tool import TranslateTool
-from tools.file_reader_tool import FileReaderTool
+# Inicializo memory dhe registry
+memory = MemoryManager()
+registry = ToolRegistry()
 
-def main():
-    registry = ToolRegistry()
-    registry.register("calculator", CalculatorTool())
-    registry.register("weather", WeatherTool())
-    registry.register("translate", TranslateTool())
-    registry.register("read_file", FileReaderTool())
+# Shto tools
+registry.register("calculator", CalculatorTool())
 
-    memory = MemoryManager()
-    agent = Agent(memory, registry)
+# Inicializo agentin
+agent = Agent(memory, registry)
 
-    print("AI Agent Ready. Type 'exit' to quit.\n")
+print("AI Agent është gati! Shkruaj 'exit' për të dalë.\n")
 
-    while True:
-        user = input("You: ")
-        if user == "exit":
-            break
-        
-        response = agent.run(user)
-        print("Agent:", response)
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "exit":
+        break
 
-if __name__ == "__main__":
-    main()
+    # Kjo thërret agentin dhe e kthen bisedën tek ti
+    response = agent.run(user_input)
+    print(f"Agent: {response}\n")
